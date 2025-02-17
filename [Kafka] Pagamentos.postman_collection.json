@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "1a987939-7939-41ff-ac43-32329aca048a",
+		"name": "[Kafka] Pagamentos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13313102"
+	},
+	"item": [
+		{
+			"name": "Produzir Mensagem Pagamento",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numero\": 2,\r\n    \"valor\": 200,\r\n    \"descricao\": \"Debito de compra\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/pagamentos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"pagamentos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
