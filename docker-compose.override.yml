@@ -1,0 +1,24 @@
+services:
+  app-producer:
+    build:
+      context: .  # Mantém o contexto da raiz do projeto
+      dockerfile: sb-kafka-producer/Dockerfile.dockerfile  # Aponta para o Dockerfile correto
+    container_name: app-java-producer
+    depends_on:
+      - kafka
+    ports:
+      - "9090:9090"
+    environment:
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+
+  app-consumer:
+    build:
+      context: .  # Mantém o contexto da raiz do projeto
+      dockerfile: sb-kafka-consumer/Dockerfile.dockerfile  # Aponta para o Dockerfile correto
+    container_name: app-java-consumer
+    depends_on:
+      - kafka
+    ports:
+      - "9091:9091"  # Porta diferente para evitar conflitos
+    environment:
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092

@@ -1,0 +1,10 @@
+spring:
+  kafka:
+    bootstrap-servers: kafka:9092
+server:
+  port: 9091
+
+topicos:
+  pagamento:
+    request:
+      topic: "pagamento.request.topic.v1"
